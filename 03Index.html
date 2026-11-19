@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            background: #1f2937;
+            padding: 25px;
+            width: 350px;
+            border-radius: 12px;
+        }
+
+        h2 {
+            text-align: center;
+            color: orange;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: orange;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 15px;
+            color: lightgreen;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Registration</h2>
+
+    <form id="regForm">
+
+        <input type="text" id="name"
+        placeholder="Student Name" required>
+
+        <input type="text" id="regid"
+        placeholder="Registration ID" required>
+
+        <input type="date" id="dob" required>
+
+        <input type="tel" id="mobile"
+        placeholder="Mobile Number"
+        pattern="[0-9]{10}" required>
+
+        <input type="email" id="email"
+        placeholder="Email Address" required>
+
+        <select id="course" required>
+            <option value="">Select Course</option>
+            <option>Computer Course</option>
+            <option>HTML & CSS</option>
+            <option>JavaScript</option>
+            <option>MS Office</option>
+            <option>Excle</option>
+        </select>
+
+        <button type="submit">Register Now</button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+document.getElementById("regForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let regid = document.getElementById("regid").value;
+
+    document.getElementById("result").innerHTML =
+    "Registration Successful!<br>" +
+    "Name: " + name + "<br>" +
+    "Registration ID: " + regid;
+});
+</script>
+
+</body>
+</html>
